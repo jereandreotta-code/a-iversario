@@ -1,0 +1,529 @@
+
+/* ==========================
+   CONFIGURACIÓN GENERAL
+========================== */
+
+:root {
+    --fondo: #101014;
+    --fondo-secundario: #181519;
+    --bordo: #572b38;
+    --rosa: #d6bdb8;
+    --blanco: #e9e0d4;
+    --gris: #a69b99;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fondo);
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.seccion {
+    padding: 120px 10%;
+}
+
+.etiqueta {
+    display: block;
+    color: var(--rosa);
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+h2 {
+    font-size: clamp(42px, 6vw, 75px);
+    margin-bottom: 35px;
+}
+
+h2 em, h1 em {
+    color: var(--rosa);
+    font-weight: 400;
+}
+
+p {
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 2.1;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.linea {
+    width: 55px;
+    height: 1px;
+    background: var(--bordo);
+    margin: 35px 0;
+}
+
+
+/* ==========================
+   PORTADA
+========================== */
+
+.portada {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.portada-fondo {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(16, 16, 20, 0.35),
+            rgba(16, 16, 20, 0.85)
+        ),
+        url('../img/portada.jpg') center/cover;
+    filter: brightness(0.65);
+    transform: scale(1.04);
+    animation: aparecer 2s ease forwards;
+}
+
+.portada-contenido {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    animation: subir 1.5s ease;
+}
+
+.portada h1 {
+    font-size: clamp(65px, 11vw, 125px);
+    margin-bottom: 25px;
+}
+
+.portada p {
+    margin: 0 auto 40px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 15px 28px;
+    border: 1px solid rgba(214, 189, 184, 0.5);
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.boton span {
+    margin-left: 12px;
+}
+
+.boton:hover {
+    background: var(--bordo);
+    border-color: var(--bordo);
+}
+
+.portada-fecha {
+    position: absolute;
+    bottom: 30px;
+    color: var(--rosa);
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+
+/* ==========================
+   INTRODUCCIÓN
+========================== */
+
+.introduccion {
+    text-align: center;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.introduccion p {
+    margin: 0 auto 15px;
+}
+
+.foto-grande {
+    position: relative;
+    height: 550px;
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.foto-grande img {
+    filter: brightness(0.8) saturate(0.75);
+    transition: transform 1s ease;
+}
+
+.foto-grande:hover img {
+    transform: scale(1.04);
+}
+
+.foto-grande span {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    color: white;
+}
+
+
+/* ==========================
+   MAR DEL PLATA
+========================== */
+
+.mar-del-plata {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: 650px;
+    background: var(--fondo-secundario);
+}
+
+.mardel-imagen {
+    min-height: 650px;
+    overflow: hidden;
+}
+
+.mardel-imagen img {
+    filter: brightness(0.8) saturate(0.7);
+    transition: transform 1s ease;
+}
+
+.mardel-imagen:hover img {
+    transform: scale(1.04);
+}
+
+.mardel-texto {
+    padding: 100px 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mardel-texto h2 {
+    font-size: clamp(45px, 5vw, 70px);
+}
+
+
+/* ==========================
+   GALERÍA
+========================== */
+
+.galeria {
+    text-align: center;
+}
+
+.subtitulo {
+    margin: 0 auto 65px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    text-align: left;
+}
+
+.foto {
+    overflow: hidden;
+    background: var(--fondo-secundario);
+}
+
+.foto img {
+    filter: brightness(0.85) saturate(0.7);
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+.foto:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) saturate(0.9);
+}
+
+.foto-vertical {
+    height: 550px;
+}
+
+.foto-horizontal {
+    height: 380px;
+    align-self: center;
+}
+
+.foto figcaption {
+    padding: 18px;
+    color: var(--rosa);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+}
+
+
+/* ==========================
+   MOMENTOS DIFÍCILES
+========================== */
+
+.momentos {
+    background:
+        linear-gradient(rgba(16, 16, 20, 0.92), rgba(16, 16, 20, 0.96)),
+        url('../img/recuerdo-03.jpg') center/cover fixed;
+    text-align: center;
+}
+
+.momentos p {
+    margin: 0 auto 22px;
+}
+
+.frase-destacada {
+    color: var(--rosa);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    line-height: 1.5;
+    margin-top: 45px !important;
+}
+
+
+/* ==========================
+   BIANCA
+========================== */
+
+.ella {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 10%;
+    align-items: center;
+}
+
+.ella-imagen {
+    height: 650px;
+    overflow: hidden;
+}
+
+.ella-imagen img {
+    filter: brightness(0.85) saturate(0.75);
+    transition: transform 1s ease;
+}
+
+.ella-imagen:hover img {
+    transform: scale(1.04);
+}
+
+.ella-texto h2 {
+    font-size: clamp(42px, 5vw, 65px);
+}
+
+.apodo {
+    color: var(--rosa);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 27px;
+    margin-top: 35px;
+}
+
+
+/* ==========================
+   CARTA FINAL
+========================== */
+
+.carta {
+    background: var(--fondo-secundario);
+    text-align: center;
+}
+
+.carta-contenido {
+    max-width: 680px;
+    margin: 60px auto 0;
+    text-align: left;
+}
+
+.carta-contenido p {
+    max-width: 100%;
+    margin-bottom: 28px;
+    line-height: 2.2;
+}
+
+.firma {
+    color: var(--rosa);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    text-align: right;
+    margin-top: 60px;
+}
+
+.firma span {
+    font-size: 24px;
+}
+
+
+/* ==========================
+   FINAL
+========================== */
+
+.final {
+    height: 100vh;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.final::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(16, 16, 20, 0.45),
+        rgba(16, 16, 20, 0.85)
+    );
+}
+
+.final img {
+    position: absolute;
+    inset: 0;
+    filter: brightness(0.7) saturate(0.7);
+}
+
+.final-contenido {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.final h2 {
+    font-size: clamp(40px, 7vw, 85px);
+}
+
+.final p {
+    margin: 30px auto 80px;
+}
+
+.creditos {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--rosa);
+}
+
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ==========================
+   CELULARES
+========================== */
+
+@media (max-width: 768px) {
+
+    .seccion {
+        padding: 85px 7%;
+    }
+
+    .portada h1 {
+        font-size: 65px;
+    }
+
+    .foto-grande {
+        height: 380px;
+    }
+
+    .mar-del-plata {
+        grid-template-columns: 1fr;
+    }
+
+    .mardel-imagen {
+        min-height: 400px;
+        height: 400px;
+    }
+
+    .mardel-texto {
+        padding: 75px 8%;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .foto-vertical {
+        height: 450px;
+    }
+
+    .foto-horizontal {
+        height: 350px;
+    }
+
+    .ella {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .ella-imagen {
+        height: 450px;
+    }
+
+    .momentos {
+        background-attachment: scroll;
+    }
+
+    .final {
+        min-height: 650px;
+    }
+
+    .etiqueta {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+}
